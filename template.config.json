@@ -1,0 +1,6 @@
+{
+  "botName": "name_of_chat_twitch_channel",
+  "channelName": "name_of_channel_to_connect_to",
+  "rlName": "rocket_league_name_of_streamer",
+  "interval": 1000
+}

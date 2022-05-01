@@ -1,0 +1,23 @@
+{
+  "name": "twitch-bot-v2",
+  "version": "1.0.0",
+  "description": "A twitch bot for Rocket League",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "chromedriver": "^100.0.0",
+    "dotenv": "^16.0.0",
+    "geckodriver": "^3.0.1",
+    "png-crop": "^0.0.2",
+    "selenium-webdriver": "^4.1.2",
+    "tesseract.js": "^2.1.5",
+    "tmi.js": "^1.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
