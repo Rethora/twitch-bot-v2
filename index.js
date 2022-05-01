@@ -3,6 +3,8 @@ const config = require("./config.json")
 const { handleGoalWatch } = require("./util")
 require("dotenv").config()
 
+let watchingGoals = false
+
 const client = new tmi.Client({
   options: { debug: true },
   identity: {
@@ -15,14 +17,16 @@ const client = new tmi.Client({
 client.connect()
 
 client.on("join", (channel) => {
-  handleGoalWatch(
-    config.channelName,
-    config.interval,
-    config.rlName,
-    client,
-    channel
-  )
-  console.log(channel)
+  if (!watchingGoals) {
+    handleGoalWatch(
+      config.channelName,
+      config.interval,
+      config.rlName,
+      client,
+      channel
+    )
+    watchingGoals = true
+  }
 })
 
 client.on("message", (channel, tags, message, self) => {

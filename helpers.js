@@ -6,11 +6,11 @@ const isGoal = (text) =>
 const isGoalStreamers = (text, rlName) => {
   for (let i = 0; i < rlName.length; i++) {
     if (i + 2 < rlName.length) {
-      if (text.includes(`${rlName[i]}${rlName[i + 1]}`)) {
+      if (text.toLowerCase().includes(`${rlName[i].toLowerCase()}${rlName[i + 1].toLowerCase()}`)) {
         return true
       }
     } else {
-      if (text.includes(`${rlName[i - 1]}${rlName[rlName.length - 1]}`)) {
+      if (text.toLowerCase().includes(`${rlName[i - 1].toLowerCase()}${rlName[rlName.length - 1].toLowerCase()}`)) {
         return true
       }
     }
@@ -20,9 +20,9 @@ const isGoalStreamers = (text, rlName) => {
 
 const usedIdxs = []
 const getRandomRoast = () => {
-  let randomIdx = getRandomIdx()
+  let randomIdx = getRandomIdx(roasts.length)
   while (usedIdxs.includes(randomIdx)) {
-    randomIdx = getRandomIdx()
+    randomIdx = getRandomIdx(roasts.length)
   }
   return roasts[randomIdx]
 }

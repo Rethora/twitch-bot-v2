@@ -29,6 +29,7 @@ const handleGoalWatch = async (
     if (isGoal(text)) {
       if (isGoalStreamers(text, rlName)) {
         client.say(channel, `@${channelName} ${getRandomRoast()}`)
+        await new Promise(r => setTimeout(r, 5000))
       }
     }
   }, interval)
